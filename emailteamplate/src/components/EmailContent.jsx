@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Avatar, IconButton, Divider, TextField, Button } from '@mui/material';
 import { Reply, Forward, Delete } from '@mui/icons-material';
 import './EmailContent.css';
-import emailImage from '../assets/email-image.jpg';
+import emailImage from '/email-image.jpg';
 
 const email = {
   sender: 'Kira Crouch',
@@ -10,7 +10,7 @@ const email = {
   time: '01.07.2021, 11:20 AM',
   body: 'Greetings, fellow colleagues. I would like to share my insights on this task. I reckon we should deal with at least half of the points in the plan without further delays. I suggest proceeding from one point to the next and notifying the rest of us with at least short notices. This way is best to keep track of who is doing what.',
   recipients: ['elina.rollins@gmail.com', 'barnett@gmail.com', 'r.harwood@gmail.com', 'ch.kennedy@gmail.com'],
-  avatar: '../assets/user-profile.jpg'
+  avatar: '/user-profile.jpg'
 };
 
 const EmailContent = () => {

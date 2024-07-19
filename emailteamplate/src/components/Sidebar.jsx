@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, List, ListItem, ListItemIcon, ListItemText, Avatar, Button, Typography, Badge } from '@mui/material';
 import { Inbox, Drafts, Send, Report, Delete, Work, TravelExplore, Group, Label } from '@mui/icons-material';
 import './Sidebar.css';
-import profileImage from '../assets/elena-rollins.jpg';
+import profileImage from '/elena-rollins.jpg';
 
 const Sidebar = () => {
     return (
@@ -19,32 +19,32 @@ const Sidebar = () => {
                 <List>
                     <ListItem button>
                         <ListItemIcon>
-                            <Inbox color='info' />
+                            <Inbox sx={{ color: "white" }} />
                         </ListItemIcon>
                         <ListItemText primary="Inbox" />
-                        <Badge badgeContent={3} color="primary" />
+                        <Badge badgeContent={3} sx={{ color: "white" }} />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
-                            <Drafts color='info' />
+                            <Drafts sx={{ color: "white" }} />
                         </ListItemIcon>
                         <ListItemText primary="Drafts" />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
-                            <Send color='info' />
+                            <Send sx={{ color: "white" }} />
                         </ListItemIcon>
                         <ListItemText primary="Sent" />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
-                            <Report color='info' />
+                            <Report  sx={{ color: "white" }} />
                         </ListItemIcon>
                         <ListItemText primary="Spam" />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
-                            <Delete color='info' />
+                            <Delete  sx={{ color: "white" }} />
                         </ListItemIcon>
                         <ListItemText primary="Deleted" />
                     </ListItem>
@@ -56,23 +56,23 @@ const Sidebar = () => {
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
-                            <TravelExplore color='info' />
+                            <TravelExplore sx={{ color: "yellow" }} />
                         </ListItemIcon>
                         <ListItemText primary="Travelling" />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
-                            <Group color='info' />
+                            <Group sx={{ color: "#00FFFF" }} />
                         </ListItemIcon>
                         <ListItemText primary="Friends" />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
-                            <Label color='info' />
+                            <Label sx={{ color: "#00FA9A" }}/>
                         </ListItemIcon>
                         <ListItemText primary="New tag" />
                     </ListItem>
-                </List>
+                </List> 
             </Box>
         </Box>
     );

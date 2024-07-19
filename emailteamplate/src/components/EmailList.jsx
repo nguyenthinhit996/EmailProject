@@ -10,7 +10,7 @@ const emails = [
     subject: 'Next week meeting',
     time: '11.20',
     preview: 'Greetings, fellow colleagues...',
-    avatar: '../assets/user-profile.jpg',
+    avatar: '/user-profile.jpg',
     tag: 'Work',
   },
   {
@@ -19,7 +19,7 @@ const emails = [
     subject: 'Next week meeting',
     time: '11.20',
     preview: 'Greetings, fellow colleagues...',
-    avatar: '../assets/user-profile.jpg',
+    avatar: '/user-profile.jpg',
     tag: 'Work',
   },
   {
@@ -28,7 +28,7 @@ const emails = [
     subject: 'Next week meeting',
     time: '11.20',
     preview: 'Greetings, fellow colleagues...',
-    avatar: '../assets/user-profile.jpg',
+    avatar: '/user-profile.jpg',
     tag: 'Work',
   },
   {
@@ -37,7 +37,7 @@ const emails = [
     subject: 'Next week meeting',
     time: '11.20',
     preview: 'Greetings, fellow colleagues...',
-    avatar: '../assets/user-profile.jpg',
+    avatar: '/user-profile.jpg',
     tag: 'Work',
   },
   {
@@ -46,7 +46,7 @@ const emails = [
     subject: 'Next week meeting',
     time: '11.20',
     preview: 'Greetings, fellow colleagues...',
-    avatar: '../assets/user-profile.jpg',
+    avatar: '/user-profile.jpg',
     tag: 'Work',
   },
   {
@@ -55,7 +55,7 @@ const emails = [
     subject: 'Next week meeting',
     time: '11.20',
     preview: 'Greetings, fellow colleagues...',
-    avatar: '../assets/user-profile.jpg',
+    avatar: '/user-profile.jpg',
     tag: 'Work',
   },
   {
@@ -64,7 +64,7 @@ const emails = [
     subject: 'Next week meeting',
     time: '11.20',
     preview: 'Greetings, fellow colleagues...',
-    avatar: '../assets/user-profile.jpg',
+    avatar: '/user-profile.jpg',
     tag: 'Work',
   },
   {
@@ -73,7 +73,7 @@ const emails = [
     subject: 'Next week meeting',
     time: '11.20',
     preview: 'Greetings, fellow colleagues...',
-    avatar: '../assets/user-profile.jpg',
+    avatar: '/user-profile.jpg',
     tag: 'Work',
   },
   {
@@ -82,7 +82,7 @@ const emails = [
     subject: 'Next week meeting',
     time: '11.20',
     preview: 'Greetings, fellow colleagues...',
-    avatar: '../assets/user-profile.jpg',
+    avatar: '/user-profile.jpg',
     tag: 'Work',
   },
   {
@@ -91,7 +91,7 @@ const emails = [
     subject: 'Next week meeting',
     time: '11.20',
     preview: 'Greetings, fellow colleagues...',
-    avatar: '../assets/user-profile.jpg',
+    avatar: '/user-profile.jpg',
     tag: 'Work',
   },
   {
@@ -100,7 +100,7 @@ const emails = [
     subject: 'Next week meeting',
     time: '11.20',
     preview: 'Greetings, fellow colleagues...',
-    avatar: '../assets/user-profile.jpg',
+    avatar: '/user-profile.jpg',
     tag: 'Work',
   },
   {
@@ -109,7 +109,7 @@ const emails = [
     subject: 'Next week meeting',
     time: '11.20',
     preview: 'Greetings, fellow colleagues...',
-    avatar: '../assets/user-profile.jpg',
+    avatar: '/user-profile.jpg',
     tag: 'Work',
   },
   
