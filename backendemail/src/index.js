@@ -1,9 +1,8 @@
 import express from 'express';
-import { simpleParser, MailParser } from 'mailparser';
+import { simpleParser } from 'mailparser';
 import bodyParser from 'body-parser';
 import { inspect } from 'util';
 import moment from 'moment';
-import fs from 'fs';
 import dotenv from 'dotenv';
 
 import connection from '../config/email-config.js';
@@ -78,14 +77,13 @@ app.get('/read-emails', async (req, res) => {
         });
         connection.end();
 
-        res.status(200).json(emails);
-
         connection.once('error', function (err) {
             console.log(err);
         });
 
         connection.once('end', function () {
-            console.log('Connection ended');
+            console.log(`Connection ended - total new incoming email: ${emails?.length}`);
+            res.status(200).json(emails);
         });
 
         connection.connect();
