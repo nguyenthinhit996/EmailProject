@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import sequelize from './database.js';
 import userRoutes from './routes/userRoutes.js';
+import emailRoutes from './routes/emailRoutes.js';
 
 dotenv.config();
 
@@ -15,6 +16,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api', userRoutes);
+app.use('/api', emailRoutes);
+
 
 // Authenticate the connection and sync the database
 sequelize.authenticate()
