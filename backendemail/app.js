@@ -1,12 +1,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import sequelize from './database.js';
-// import User from './model/user.js'
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
@@ -14,27 +14,22 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-// Example route to create a user
-app.post('/users', async (req, res) => {
-  try {
-    // const user = await User.create(req.body);
-    res.status(201).json(user);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-});
+app.use('/api', userRoutes);
 
+// Authenticate the connection and sync the database
+sequelize.authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+    // Sync the User model with the database
+    return sequelize.sync({ alter: true });
+  })
+  .then(() => {
+    console.log('Database synchronized successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database or synchronize:', err.message);
+    console.error(err);
+  });
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-// Sync database and start server
-// sequelize.sync({ force: true })
-//   .then(() => {
-//     console.log('Database synced');
-//     app.listen(PORT, () => {
-//       console.log(`Server is running on port ${PORT}`);
-//     });
-//   })
-//   .catch((error) => {
-//     console.error('Unable to sync database:', error);
-//   });
