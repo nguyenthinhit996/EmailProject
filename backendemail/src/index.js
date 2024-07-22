@@ -8,6 +8,7 @@ import dotenv from 'dotenv';
 
 import connection from '../config/email-config.js';
 import transporter from '../config/nodemail-config.js';
+import { sanitizeObject } from './utils/index.js';
 
 dotenv.config();
 
@@ -55,7 +56,8 @@ app.get('/read-emails', async (req, res) => {
                         msg.on('body', async function (stream, info) {
                             console.log(prefix + 'Body');
                             const parsed = await simpleParser(stream)
-                            fs.writeFileSync(`msg-${seqno}-body.json`, JSON.stringify(parsed), 'utf8')
+                            emails.push(sanitizeEmailObject(parsed))
+                            // fs.writeFileSync(`msg-${seqno}-body.json`, JSON.stringify(parsed), 'utf8')
                         });
                         msg.once('attributes', function (attrs) {
                             console.log(prefix + 'Attributes: %s', inspect(attrs, false, 8));
@@ -93,6 +95,24 @@ app.get('/read-emails', async (req, res) => {
         res.status(500).json({ error: 'Failed to read emails' });
     }
 });
+
+const sanitizeEmailObject = (input) => {
+    return sanitizeObject(
+        input, 
+        [
+            "html",
+            "text",
+            "textAsHtml",
+            "subject",
+            "references",
+            "date",
+            "to",
+            "from",
+            "messageId",
+            "inReplyTo"
+        ]
+    )
+}
 
 // Start the server
 app.listen(port, () => {
