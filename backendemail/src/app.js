@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import sequelize from './database.js';
 import userRoutes from './routes/userRoutes.js';
@@ -7,6 +8,7 @@ import emailRoutes from './routes/emailRoutes.js';
 dotenv.config();
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());

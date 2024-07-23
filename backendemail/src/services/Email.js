@@ -30,7 +30,7 @@ const sendMail = (req, res) => {
     });
 }
 
-const retrieveMail =  async (req, res) => {
+const retrieveInBoxMail =  async (req, res) => {
     const emails = [];
     try {
         connection.once('ready', function () {
@@ -56,6 +56,7 @@ const retrieveMail =  async (req, res) => {
                     });
                     f.once('error', function (err) {
                         console.log('Fetch error: ' + err);
+                        res.status(500).json({ error: err.message });
                     });
                     f.once('end', function () {
                         console.log('Done fetching all messages!');
@@ -68,6 +69,7 @@ const retrieveMail =  async (req, res) => {
 
         connection.once('error', function (err) {
             console.log(err);
+            res.status(500).json({ error: err.message });
         });
 
         connection.once('end', function () {
@@ -101,4 +103,4 @@ const sanitizeEmailObject = (input) => {
     )
 }
 
-export { sendMail, retrieveMail }
+export { sendMail, retrieveInBoxMail }

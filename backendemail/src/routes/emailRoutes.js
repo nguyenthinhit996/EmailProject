@@ -1,9 +1,9 @@
 import express from 'express';
-import { sendMail, retrieveMail } from '../services/Email.js';
+import { sendMail, retrieveInBoxMail } from '../services/Email.js';
 
 const router = express.Router();
 
 router.post('/send-email', sendMail);
-router.get('/read-emails', retrieveMail);
+router.get('/read-emails', retrieveInBoxMail);
 
 export default router;
