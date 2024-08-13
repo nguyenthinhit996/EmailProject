@@ -1,5 +1,5 @@
 import express from 'express';
-import { sendMail, retrieveInBoxMail } from '../services/Email.js';
+import { sendMail, retrieveInBoxMail, retrieveInBoxMailVer2 } from '../services/Email.js';
 
 const router = express.Router();
 
